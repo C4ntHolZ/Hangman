@@ -7,6 +7,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+//Funktion zum Einlesen der Textdatei, in welcher die Wörter gespeichert wurden
+//Textdatei ist unter "resources" zu finden
 public class FileReader {
     public  static String fileReader(int row) throws IOException {
         URL url = FileReader.class.getClassLoader().getResource("woerter.txt");

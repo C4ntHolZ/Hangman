@@ -10,11 +10,14 @@ public class Functions {
     static List<String> letters = new ArrayList<>();
     static DrawHangman drawHangman = new DrawHangman();
 
+    //Gibt eine zufällige Zahl zwischen 1-20 aus, um die Zeile aus der Textdatei auszuwählen
     public static int randomNumber() {
         Random rand = new Random();
         int randomNumber = rand.nextInt(20);
         return randomNumber;
     }
+
+   //Gibt das Wort mit unterstrichen aus
     public static void wordUnderlined(String word) {
         System.out.print("Wort: ");
         for (int i = 0; i < word.length(); i++) {
@@ -24,6 +27,11 @@ public class Functions {
         System.out.println();
     }
 
+    //Überprüft den eingegebenen Buchstaben, ob dieser im Wort enthalten ist
+    //Falls der Buchstabe enthalten ist, wird dieser in das Wort eingesetzt
+    //und der Strich an der Stelle durch den Buchstaben ersetzt
+    //Des Weiteren wird in der Funktion "saveLetters" überprüft, ob der Buchstabe
+    //bereits benutzt wurde. Falls ja, erfolgt eine Ausgabe, ansonsten wird dieser eingespeichert
     public static boolean enterLetterAndCheckInWord(String word) {
         String letter;
         do {
@@ -48,6 +56,7 @@ public class Functions {
         return letterIn;
     }
 
+    //Prüfen auf die Anzahl der Striche, falls das Array keine Striche mehr enthält, wird "true" zurückgegeben
     public static boolean wordSolved(String word) {
         for (int i = 0; i < word.length(); i++) {
             if (arr1[i] == '_') {
@@ -56,6 +65,9 @@ public class Functions {
         }
         return true;
     }
+
+    //Hauptfunktion, welche die "Spielzüge" solange durchführt, bis entweder das Wort
+    //gelöst ist, oder die Anzahl der maximalen Versuche erreicht wurde.
     public static void repeatTurn(String word) {
         int counter = 0;
         drawHangman.gallow(counter);
@@ -69,6 +81,8 @@ public class Functions {
         endGame(counter, word);
     }
 
+    //Prüft den Spielstand darauf, ob das Spiel verloren wurde (counter == 7) oder ob das Wort fertig
+    //erraten wurde
     public static void endGame(int counter, String word) {
         if (counter == 7) {
             System.out.println("Spiel verloren! Das Wort wäre " + word.toUpperCase() + " gewesen!");
@@ -77,6 +91,7 @@ public class Functions {
         }
     }
 
+    //Funktion zum Speichern der eingegebenen Buchstaben und überprüfen, ob ein Buchstabe bereits eingegeben wurde
     public static boolean saveLetters(String letter){
         boolean letterUsed = false;
         if(letters.contains(letter)){

@@ -1,6 +1,7 @@
 package klauda.galgenmaennchen;
 
 public class DrawHangman {
+    //Funktion, welche dazu da ist auf der Konsole ein Galgenmännchen zu malen
     public static void gallow(int mistakes){
         if(mistakes == 0){
             System.out.println("_________");
