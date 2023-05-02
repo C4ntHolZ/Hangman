@@ -11,9 +11,9 @@ public class Functions {
     static DrawHangman drawHangman = new DrawHangman();
 
     //Gibt eine zufällige Zahl zwischen 1-20 aus, um die Zeile aus der Textdatei auszuwählen
-    public static int randomNumber() {
+    public static int randomNumber(int rows) {
         Random rand = new Random();
-        int randomNumber = rand.nextInt(20);
+        int randomNumber = rand.nextInt(rows);
         return randomNumber;
     }
 
@@ -92,9 +92,13 @@ public class Functions {
     }
 
     //Funktion zum Speichern der eingegebenen Buchstaben und überprüfen, ob ein Buchstabe bereits eingegeben wurde
+    //Prüft des Weiteren darauf, dass nicht mehr als ein Buchstabe eingegeben wird
     public static boolean saveLetters(String letter){
         boolean letterUsed = false;
-        if(letters.contains(letter)){
+        if(letter.length() > 1){
+            System.out.println("Nur einen Buchstaben eingeben!");
+            letterUsed = true;
+        }else if(letters.contains(letter)){
             letterUsed = true;
             System.out.println("Der Buchstabe wurde schon benutzt");
         }else{

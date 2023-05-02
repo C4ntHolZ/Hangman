@@ -7,7 +7,7 @@ import static klauda.galgenmaennchen.Functions.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String word = fileReader(randomNumber());
+        String word = fileReader();
         repeatTurn(word);
     }
 }
