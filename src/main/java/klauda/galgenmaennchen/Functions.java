@@ -38,7 +38,7 @@ public class Functions {
             System.out.println("Gebe einen Buchstaben ein: ");
             Scanner sc = new Scanner(System.in);
             letter = sc.next();
-        } while (saveLetters(letter));
+        } while (savedLetters(letter));
         boolean letterIn = false;
         char myLetter = letter.toLowerCase().charAt(0);
         System.out.print("Wort: ");
@@ -93,7 +93,7 @@ public class Functions {
 
     //Funktion zum Speichern der eingegebenen Buchstaben und überprüfen, ob ein Buchstabe bereits eingegeben wurde
     //Prüft des Weiteren darauf, dass nicht mehr als ein Buchstabe eingegeben wird
-    public static boolean saveLetters(String letter){
+    public static boolean savedLetters(String letter){
         boolean letterUsed = false;
         if(letter.length() > 1){
             System.out.println("Nur einen Buchstaben eingeben!");

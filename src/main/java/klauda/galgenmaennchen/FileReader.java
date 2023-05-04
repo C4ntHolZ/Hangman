@@ -26,7 +26,6 @@ public class FileReader {
             allWords.add(zeile);
             rowCounter++;
         }
-        System.out.println(rowCounter);
         return allWords.get(randomNumber(rowCounter)).toLowerCase();
     }
 }
