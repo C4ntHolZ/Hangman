@@ -1,12 +1,10 @@
 package klauda.galgenmaennchen;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static klauda.galgenmaennchen.Functions.randomNumber;
 
